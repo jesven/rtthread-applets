@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="cat" />
+		<Option pch_mode="2" />
+		<Option compiler="arm-elf-gcc" />
+		<Build>
+			<Target title="default">
+				<Option output="default/cat.axf" prefix_auto="0" extension_auto="0" />
+				<Option object_output="default" />
+				<Option type="1" />
+				<Option compiler="arm-elf-gcc" />
+				<Compiler>
+					<Add option="-fpic -msingle-pic-base" />
+					<Add directory="../../sdk/crt/rtthread/include" />
+				</Compiler>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-O2" />
+			<Add option="-fno-common" />
+			<Add option="-mcpu=cortex-m7" />
+		</Compiler>
+		<Linker>
+			<Add option="-s" />
+			<Add option="-Wl,-Map,map.txt" />
+			<Add option="-mcpu=cortex-m7" />
+			<Add option="-T gcc_arm.ld" />
+		</Linker>
+		<Unit filename="../../sdk/crt/gcc/arch/arm/startup.S" />
+		<Unit filename="../../sdk/crt/gcc/arch/arm/syscall.S" />
+		<Unit filename="../../sdk/crt/gcc/crti.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../sdk/crt/gcc/getreent.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../sdk/crt/gcc/reloc_got.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../sdk/crt/gcc/retarget.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../sdk/crt/gcc/stdio/printf.c">
+			<Option compilerVar="CC" />
+			<Option weight="0" />
+		</Unit>
+		<Unit filename="../../sdk/crt/gcc/stdio/puts.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../sdk/crt/gcc/stdio/snprintf.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../sdk/crt/gcc/stdio/vfprintf.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../sdk/crt/gcc/stdio/vsnprintf.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../sdk/crt/rtthread/include/netdb.h" />
+		<Unit filename="../../sdk/crt/rtthread/include/poll.h" />
+		<Unit filename="../../sdk/crt/rtthread/include/sys/socket.h" />
+		<Unit filename="../../sdk/crt/rtthread/include/sys/syscall.h" />
+		<Unit filename="../../sdk/crt/rtthread/io.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../sdk/crt/rtthread/mem.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../sdk/crt/rtthread/net/socket.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../sdk/crt/rtthread/process.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="gcc_arm.ld" />
+		<Unit filename="main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
